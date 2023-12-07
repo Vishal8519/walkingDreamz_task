@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+
+{% block title %}Weather Data{% endblock %}
+
+{% block header %}Weather Data{% endblock %}
+
+{% block content %}
+    <h2>Data Options</h2>
+    <ul>
+        <button><li><a href="{% url 'all_weather_data' %}">Show All Data</a></li></button>
+        
+
+        <button><li><a href="{% url 'specific_weather_data' %}">Show Specific data</a></li></button>
+    </ul>
+{% endblock %}
+

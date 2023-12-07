@@ -1,0 +1,57 @@
+{% extends 'base.html' %}
+
+{% block title %}Home - Weather App{% endblock %}
+
+{% block header %}Weather App all data{% endblock %}
+<button><a href="/"> Home </a></button>
+
+
+{% block content %}
+    <h2>All Weather Data</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>SI</th>
+                <th>City</th>
+                <th>Temperature (&deg;C)</th>
+                <th>Humidity (%)</th>
+                <th>Wind Speed (m/s)</th>
+                <th>Longitude</th>
+                <th>Latitude</th>
+                <th>Date and Time</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for data in all_weather_data %}
+                <tr>
+                    <td>{{ forloop.counter }}</td>
+                    <td>{{ data.city }}</td>
+                    <td>{{ data.temperature }}</td>
+                    <td>{{ data.humidity }}</td>
+                    <td>{{ data.wind_speed }}</td>
+                    <td>{{ data.city_lon }}</td>
+                    <td>{{ data.city_lat }}</td>
+                    <td>{{ data.timestamp }}</td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+
+    <div class="pagination">
+        <span class="step-links">
+            {% if all_weather_data.has_previous %}
+                <a href="?page=1">&laquo; first</a>
+                <a href="?page={{ all_weather_data.previous_page_number }}">previous</a>
+            {% endif %}
+
+            <span class="current">
+                Page {{ all_weather_data.number }} of {{ all_weather_data.paginator.num_pages }}.
+            </span>
+
+            {% if all_weather_data.has_next %}
+                <a href="?page={{ all_weather_data.next_page_number }}">next</a>
+                <a href="?page={{ all_weather_data.paginator.num_pages }}">last &raquo;</a>
+            {% endif %}
+        </span>
+    </div>
+{% endblock %}
