@@ -5,6 +5,7 @@ import httpx
 import time
 import matplotlib.pyplot as plt
 from asgiref.sync import sync_to_async
+from django.conf import settings
 
 os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'weather_analysis.settings')
 django.setup()
@@ -40,7 +41,7 @@ async def main(api_key, cities):
     await asyncio.gather(*tasks)
 
 if __name__ == "__main__":
-    api_key = '2577adbb10bfe3c1f21efbf9a11f8a0b'
+    api_key = settings.API_KEY
     cities = ["London", "New York", "Tokyo", "Paris", "Sydney"]
 
     start_time_async = time.time()

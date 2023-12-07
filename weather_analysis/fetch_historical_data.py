@@ -4,6 +4,7 @@ import asyncio
 import httpx
 from asgiref.sync import sync_to_async
 from django.db import models
+from django.conf import settings
 
 os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'weather_analysis.settings')
 django.setup()
@@ -75,7 +76,7 @@ async def main(api_key, cities):
 
 
 if __name__ == "__main__":
-    api_key = '2577adbb10bfe3c1f21efbf9a11f8a0b'  
+    api_key = settings.API_KEY
     cities = ["London", "New York", "Tokyo", "Paris", "Sydney"]
     start_date = datetime.datetime(2022, 1, 1)
     end_date = datetime.datetime(2022, 12, 31)

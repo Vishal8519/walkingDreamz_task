@@ -57,3 +57,13 @@ INFO:root:Successfully fetched and stored data for Sydney.
 DEBUG:django.db.backends:(0.000) INSERT INTO "weather_weatherdata" ("city", "temperature", "humidity", "wind_speed", "timestamp", "city_lat", "city_lon") VALUES ('Sydney', 23.92, 74.0, 5.14, '2023-12-07 06:50:55.267666', -33.8679, 151.2073) RETURNING "weather_weatherdata"."id"; args=('Sydney', 23.92, 74.0, 5.14, '2023-12-07 06:50:55.267666', -33.8679, 151.2073); alias=default
 
 
+INFO:root:Successfully fetched and stored data for London.
+DEBUG:django.db.backends:(0.001) INSERT INTO "weather_weatherdata" ("city", "temperature", "humidity", "wind_speed", "timestamp", "city_lat", "city_lon") VALUES ('London', 8.07, 82.0, 6.17, '2023-12-07 11:39:43.520177', 51.5085, -0.1257) RETURNING "weather_weatherdata"."id"; args=('London', 8.07, 82.0, 6.17, '2023-12-07 11:39:43.520177', 51.5085, -0.1257); alias=default
+INFO:root:Successfully fetched and stored data for New York.
+DEBUG:django.db.backends:(0.000) INSERT INTO "weather_weatherdata" ("city", "temperature", "humidity", "wind_speed", "timestamp", "city_lat", "city_lon") VALUES ('New York', -0.43, 58.0, 3.6, '2023-12-07 11:39:47.611653', 40.7143, -74.006) RETURNING "weather_weatherdata"."id"; args=('New York', -0.43, 58.0, 3.6, '2023-12-07 11:39:47.611653', 40.7143, -74.006); alias=default
+INFO:root:Successfully fetched and stored data for Tokyo.
+DEBUG:django.db.backends:(0.001) INSERT INTO "weather_weatherdata" ("city", "temperature", "humidity", "wind_speed", "timestamp", "city_lat", "city_lon") VALUES ('Tokyo', 12.13, 40.0, 5.14, '2023-12-07 11:39:51.912684', 35.6895, 139.6917) RETURNING "weather_weatherdata"."id"; args=('Tokyo', 12.13, 40.0, 5.14, '2023-12-07 11:39:51.912684', 35.6895, 139.6917); alias=default
+INFO:root:Successfully fetched and stored data for Paris.
+DEBUG:django.db.backends:(0.000) INSERT INTO "weather_weatherdata" ("city", "temperature", "humidity", "wind_speed", "timestamp", "city_lat", "city_lon") VALUES ('Paris', 5.35, 84.0, 5.14, '2023-12-07 11:39:55.607538', 48.8534, 2.3488) RETURNING "weather_weatherdata"."id"; args=('Paris', 5.35, 84.0, 5.14, '2023-12-07 11:39:55.607538', 48.8534, 2.3488); alias=default
+INFO:root:Successfully fetched and stored data for Sydney.
+DEBUG:django.db.backends:(0.000) INSERT INTO "weather_weatherdata" ("city", "temperature", "humidity", "wind_speed", "timestamp", "city_lat", "city_lon") VALUES ('Sydney', 21.6, 78.0, 4.12, '2023-12-07 11:39:58.270560', -33.8679, 151.2073) RETURNING "weather_weatherdata"."id"; args=('Sydney', 21.6, 78.0, 4.12, '2023-12-07 11:39:58.270560', -33.8679, 151.2073); alias=default
