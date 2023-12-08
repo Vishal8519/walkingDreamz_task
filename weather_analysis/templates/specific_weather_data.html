@@ -3,19 +3,20 @@
 {% extends 'base.html' %}
 {% block content %}
     <h2>Specific Weather Data</h2>
-    
 
     <form method="post" action="{% url 'specific_weather_data' %}">
         {% csrf_token %}
         <label for="start_date">Start Date:</label>
-        <input type="date" id="start_date" name="start_date" required>
-    
+        <input type="date" id="start_date" name="start_date" >
+
         <label for="end_date">End Date:</label>
-        <input type="date" id="end_date" name="end_date" required>
+        <input type="date" id="end_date" name="end_date" >
+
+        <label for="city">City:</label>
+        <input type="text" id="city" name="city" >
 
         <button type="submit">Show Specific Data</button>
     </form>
-    
 
     {% if weather_data %}
     <table>
@@ -36,7 +37,7 @@
             {% endfor %}
         </tbody>
     </table>
-{% else %}
+    {% else %}
     <p>No data available for the specified filters.</p>
-{% endif %}
+    {% endif %}
 {% endblock %}

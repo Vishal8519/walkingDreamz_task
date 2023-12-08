@@ -36,16 +36,30 @@ def all_weather_data(request):
 
     return render(request, 'all_weather_data.html', context)
 
+
+
 def specific_weather_data(request):
+    all_weather_data = WeatherData.objects.all()
+    weather_data = all_weather_data
+
     if request.method == 'POST':
         start_date = request.POST.get('start_date')
         end_date = request.POST.get('end_date')
+        city = request.POST.get('city')
 
-        weather_data = WeatherData.objects.filter(timestamp__range=[start_date, end_date])
+        filter_conditions = {}
 
-        return render(request, 'specific_weather_data.html', {'weather_data': weather_data})
+        if start_date:
+            filter_conditions['timestamp__gte'] = start_date
+        if end_date:
+            filter_conditions['timestamp__lte'] = end_date
+        if city:
+            filter_conditions['city__icontains'] = city
 
-    return render(request, 'specific_weather_data.html')
+        weather_data = all_weather_data.filter(**filter_conditions)
+
+    return render(request, 'specific_weather_data.html', {'weather_data': weather_data})
+
 
 @api_view(['GET'])
 def weather_data_view(request, *args, **kwargs):
